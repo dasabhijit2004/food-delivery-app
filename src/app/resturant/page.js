@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import UserLogin from '../_components/resturantLogin';
-import UserSignup from '../_components/resturantSignup';
+import ResturantLogin from '../_components/resturantLogin';
+import ResturantSignup from '../_components/resturantSignup';
 
 const Resturant = () => {
     const [login, setLogin] = React.useState(true);
@@ -12,7 +12,7 @@ const Resturant = () => {
                 {login ? "Resturant Login" : "Resturant Sign Up"}
             </h2>
                 {
-                    login ? <UserLogin /> : <UserSignup />
+                    login ? <ResturantLogin /> : <ResturantSignup />
                 }
                 <div className='outer'>
                     <p className='text-center'>

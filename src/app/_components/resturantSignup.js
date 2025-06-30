@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserSignup = () => {
+const ResturantSignup = () => {
   return (
     <>
       <form className="form">
@@ -39,4 +39,4 @@ const UserSignup = () => {
   )
 }
 
-export default UserSignup
+export default ResturantSignup
