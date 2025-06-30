@@ -1,0 +1,98 @@
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.resturant-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+}
+
+.resturant-nav-list {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    gap: 20px;
+}
+
+.resturant-nav-items {
+    list-style: none;
+}
+
+.resturant-nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.resturant-nav-link:hover {
+    color: green;
+}
+
+.resturant-login-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: green;
+    color: #ffffff;
+    transition: background 0.3s ease;
+}
+
+.resturant-login-link:hover {
+    background: black;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .resturant-nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 20px;
+        display: none;
+    }
+
+    .resturant-nav.open {
+        display: flex;
+    }
+
+    .resturant-nav-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .resturant-login {
+        display: none;
+    }
+}

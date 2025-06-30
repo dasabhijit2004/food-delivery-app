@@ -134,3 +134,22 @@ h2 {
 .text-center {
     font-size: 14px;
 }
+
+/* footer  */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+/* global media query */
+@media (max-width: 768px) {
+    .resturant-container {
+        padding: 20px;
+    }
+}
