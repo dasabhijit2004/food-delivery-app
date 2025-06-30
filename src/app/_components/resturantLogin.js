@@ -4,7 +4,6 @@ const UserLogin = () => {
   return (
     <>
       <form className="form">
-        <h2>Resturant Login</h2>
         <div className="input-wrapper">
           <label htmlFor="email" className="label">Email:</label>
           <input type="email" id="email" name="email" required className="input-field" />

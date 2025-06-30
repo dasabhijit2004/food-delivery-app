@@ -4,10 +4,19 @@ const UserSignup = () => {
   return (
     <>
       <form className="form">
-        <h2>Resturant Sign Up</h2>
         <div className="input-wrapper">
-          <label htmlFor="name" className="label">Name:</label>
-          <input type="name" id="name" name="name" required className="input-field" />
+          <label htmlFor="name" className="label">Resturant Name:</label>
+          <input type="text" id="name" name="name" required className="input-field" />
+        </div>
+
+        <div className="input-wrapper">
+          <label htmlFor="number" className="label">Contact No.:</label>
+          <input type="text" id="number" name="number" required className="input-field" />
+        </div>
+
+        <div className="input-wrapper">
+          <label htmlFor="address" className="label">Address:</label>
+          <input type="text" id="address" name="address" required className="input-field" />
         </div>
 
         <div className="input-wrapper">
@@ -21,8 +30,8 @@ const UserSignup = () => {
         </div>
 
         <div className="input-wrapper">
-          <label htmlFor="password" className="label">Confirm Password:</label>
-          <input type="password" id="confirm-password" name="password" required className="input-field" />
+          <label htmlFor="confirm-password" className="label">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required className="input-field" />
         </div>
         <button type="submit" className="button">Sign Up</button>
       </form>
