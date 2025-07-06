@@ -8,8 +8,35 @@ const ResturantSignup = () => {
   const [password, setPassword] = React.useState('')
   const [c_password, setC_password] = React.useState('')
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     console.log(name, number, address, email, password, c_password)
+    let result = await fetch('http://localhost:3000/api/resturant', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        number,
+        address,
+        email,
+        password
+      })
+    })
+    result = await result.json()
+    console.log(result)
+    if (result.error) {
+      alert(result.error)
+    } else {
+      alert('Resturant registered successfully')
+      setName('')
+      setNumber('')
+      setAddress('')
+      setEmail('')
+      setPassword('')
+      setC_password('')
+    }
   }
 
   return (

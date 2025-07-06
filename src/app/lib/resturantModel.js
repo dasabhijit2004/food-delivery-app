@@ -3,10 +3,14 @@ const { default: mongoose } = require("mongoose");
 const resturantModel = new mongoose.Schema(
     {
         name: String,
+        number: String,
+        address: String,
+        email: String,
+        password: String,
     },
     {
         collection: "resturant",
     }
 )
 
-export const resturantSchema = mongoose.models.resturant || mongoose.model("resturant", resturantModel);
+export const Resturant = mongoose.models.resturant || mongoose.model("Resturant", resturantModel);
