@@ -64,12 +64,36 @@ h2 {
     border-radius: 8px;
     font-size: 16px;
     transition: border 0.3s ease;
+    width: 100%;
+}
+
+.password-field{
+    position: relative;
+}
+
+.input-field.password-input {
+    padding-right: 40px;
 }
 
 .input-field:focus {
     border-color: #28a745;
     outline: none;
     box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.password-toggle:hover {
+    color: #333;
 }
 
 .button {

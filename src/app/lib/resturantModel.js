@@ -13,4 +13,4 @@ const resturantModel = new mongoose.Schema(
     }
 )
 
-export const Resturant = mongoose.models.resturant || mongoose.model("Resturant", resturantModel);
+export const Resturant = mongoose.models?.Resturant || mongoose.model("Resturant", resturantModel);
