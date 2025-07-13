@@ -1,8 +1,10 @@
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { toast, ToastContainer } from 'react-toastify';
 
 const ResturantSignup = () => {
+  const router = useRouter()
   const [name, setName] = React.useState('')
   const [number, setNumber] = React.useState('')
   const [address, setAddress] = React.useState('')
@@ -49,7 +51,7 @@ const ResturantSignup = () => {
     }
 
     try {
-      let result = await fetch('http://localhost:3000/api/resturant', {
+      let result = await fetch('http://localhost:3000/api/resturant/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -69,13 +71,14 @@ const ResturantSignup = () => {
       if (result.error) {
         toast.error(result.error);
       } else {
-        toast.success('Restaurant registered successfully!');
+        toast.success('Restaurant registered successfully! Redirecting...');
         setName('');
         setNumber('');
         setAddress('');
         setEmail('');
         setPassword('');
         setC_password('');
+        router.push('/resturant')
       }
     } catch (err) {
       console.error(err);

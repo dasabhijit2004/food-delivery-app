@@ -25,10 +25,6 @@ const ResturantHeader = () => {
                     <li className='resturant-nav-items'><Link href="/menu" className='resturant-nav-link'>Menu</Link></li>
                 </ul>
             </nav>
-
-            <div className='resturant-login'>
-                <Link href="/resturant/auth" className='resturant-login-link'>Login</Link>
-            </div>
         </header>
     );
 };
