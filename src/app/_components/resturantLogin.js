@@ -21,29 +21,28 @@ const ResturantLogin = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/resturant/login', {
+      const response = await fetch('/api/resturant/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
 
-      if (response.ok) {
-        const data = await response.json();
+      const data = await response.json();
 
-        // Save token or user info
+      if (response.ok) {
+        // Save user info
+        localStorage.setItem('name', data.user.name);
+        localStorage.setItem('email', data.user.email);
+        // If you have token later, uncomment below
         localStorage.setItem('token', data.token);
 
         toast.success('Login successful! Redirecting...', {
           position: 'top-right',
           autoClose: 1500,
+          onClose: () => router.push('/resturant'), // Redirect after toast
         });
-
-        setTimeout(() => {
-          router.push('/resturant');
-        }, 2000);
       } else {
-        const errorData = await response.json();
-        toast.error(errorData.message || 'Invalid email or password');
+        toast.error(data.error || data.message || 'Invalid email or password');
       }
     } catch (err) {
       console.error('Login error:', err);

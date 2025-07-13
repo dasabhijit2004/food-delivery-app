@@ -6,7 +6,7 @@ const ResturantHeader = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <header className='resturant-header'>
+        <header className='resturant-header fixed top-0 left-0 w-full'>
             <img src="/logo.png" alt="logo" className='logo' />
 
             {/* Hamburger Icon */}

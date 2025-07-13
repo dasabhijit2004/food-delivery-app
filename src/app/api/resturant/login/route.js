@@ -3,6 +3,7 @@ import { Resturant } from "@/app/lib/resturantModel";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
+import { generateJWT } from "@/app/lib/auth";
 
 export async function POST(request) {
   try {
@@ -38,7 +39,7 @@ export async function POST(request) {
     }
 
     // Optionally generate a JWT here for session
-    // const token = generateJWT(user);
+    const token = generateJWT(user);
 
     return NextResponse.json({
       message: "Login successful",
@@ -48,7 +49,7 @@ export async function POST(request) {
         number: user.number,
         address: user.address,
       },
-      // token: token
+      token: token
     });
   } catch (error) {
     console.error("POST /api/resturant/login failed:", error);
